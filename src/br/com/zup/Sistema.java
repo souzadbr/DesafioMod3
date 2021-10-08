@@ -29,4 +29,13 @@ public class Sistema {
         return ServicoCliente.cadastrarCliente(nome, email, cpf);
     }
 
+    //Método Cadastrar vendedor responsavel
+    public static Vendedor cadastrarVendedor() throws Exception{
+        String nome = capturarDados("Digite o nome do vendedor responsavel: ").nextLine();
+        String email = capturarDados("Digite o e-mail do vendedor responsavel: ").nextLine();
+        String cpf = capturarDados("Digite o CPF do vendedor responsavel:").nextLine();
+
+        return ServicoVendedor.cadastrarVendedor(nome,email,cpf);
+    }
+
 }
