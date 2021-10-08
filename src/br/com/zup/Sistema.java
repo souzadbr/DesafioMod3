@@ -38,4 +38,10 @@ public class Sistema {
         return ServicoVendedor.cadastrarVendedor(nome,email,cpf);
     }
 
+    //Método Exibir Cliente cadastrados
+    public static void exibirClientesCadastrados() {
+
+        ServicoCliente.exibirClientesCadastrados();
+    }
+
 }
