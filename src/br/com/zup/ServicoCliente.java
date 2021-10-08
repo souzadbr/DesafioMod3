@@ -19,6 +19,7 @@ public class ServicoCliente {
 
     //Método que mostra clientees cadastrados
     public static void exibirClientesCadastrados() {
+
         System.out.println(clientes);
     }
 }

@@ -44,4 +44,11 @@ public class Sistema {
         ServicoCliente.exibirClientesCadastrados();
     }
 
+    //Método Exibir Vendedor cadastrados
+    public static void exibirVendedoresCadastrados() {
+
+       ServicoVendedor.exibirVendedoresCadastrados();
+    }
+
+
 }

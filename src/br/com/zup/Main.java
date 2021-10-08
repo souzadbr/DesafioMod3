@@ -7,6 +7,7 @@ public class Main {
             Sistema.cadastrarCliente();
             Sistema.cadastrarVendedor();
             Sistema.exibirClientesCadastrados();
+            Sistema.exibirVendedoresCadastrados();
 
       }catch (Exception erro){
           System.out.println(erro.getMessage());
