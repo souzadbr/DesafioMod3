@@ -6,7 +6,7 @@ public class Main {
         boolean continuarExecultar = true;
        while(continuarExecultar){
            try {
-               Sistema.execultar();
+              continuarExecultar= Sistema.execultar();
 
            } catch (Exception erro) {
                System.out.println(erro.getMessage());

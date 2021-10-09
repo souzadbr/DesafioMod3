@@ -80,7 +80,7 @@ public class Sistema {
 
         boolean continuarMenu = true;
 
-        while(continuarMenu = true){
+        while(continuarMenu){
             menu();
             int opcaoUsuario = capturarDados("Digite a opção desejada: ").nextInt();
 
@@ -130,7 +130,7 @@ public class Sistema {
 
                 System.out.println("Até mais.Volte Sempre!");
                 continuarMenu = false;
-                System.exit(0);
+
 
             }
             else {
