@@ -10,6 +10,7 @@ public class ServicoVendedor {
     //Método que cadastra Vendedor Responsavel
     public static Vendedor cadastrarVendedor(String nome, String email, String cpf) throws Exception {
         validarEmail(email);
+
         Vendedor vendedor = new Vendedor(nome, email, cpf);
         vendedores.add(vendedor);
         return vendedor;
@@ -31,6 +32,24 @@ public class ServicoVendedor {
             throw new Exception("Email inválido. Verifique email digitado!");
         }
     }
+
+    //Metodo de verificar duplicidade de e-mail
+    public static void verificarEmailRepetido (String email) throws Exception {
+        for (Vendedor vendedorReferencia:vendedores) {
+            if(vendedorReferencia.getEmail().equalsIgnoreCase(email)){
+                throw new Exception("Já existe vendedor vinculado a esse e-mail em nosso Sistema! ");
+            }
+        }
+    }
+
+    //Metodo de verificar duplicidade de CPF
+    public static void VerificarCpfRepetido (String cpf) throws Exception {
+        for (Vendedor vendedorReferencia:vendedores) {
+            if(vendedorReferencia.getCpf().equalsIgnoreCase(cpf))
+                throw new Exception("Já existe vendedor vinculado a esse CPF em nosso Sistema! ");
+            }
+        }
+
 
     public static void exibirVendedoresCadastrados() {
 

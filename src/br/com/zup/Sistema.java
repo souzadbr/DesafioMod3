@@ -24,7 +24,9 @@ public class Sistema {
     public static Cliente cadastrarCliente() throws Exception {
         String nome = capturarDados("Digite o nome do Cliente: ").nextLine();
         String email = capturarDados("Digite o e-mail do cliente: ").nextLine();
+        ServicoCliente.verificarEmailRepetido(email);
         String cpf = capturarDados("Digite o CPF do cliente:").nextLine();
+        ServicoCliente.VerificarCpfRepetido(cpf);
 
         return ServicoCliente.cadastrarCliente(nome, email, cpf);
     }
@@ -33,7 +35,9 @@ public class Sistema {
     public static Vendedor cadastrarVendedor() throws Exception{
         String nome = capturarDados("Digite o nome do vendedor responsavel: ").nextLine();
         String email = capturarDados("Digite o e-mail do vendedor responsavel: ").nextLine();
+        ServicoVendedor.verificarEmailRepetido(email);
         String cpf = capturarDados("Digite o CPF do vendedor responsavel:").nextLine();
+        ServicoVendedor.VerificarCpfRepetido(cpf);
 
         return ServicoVendedor.cadastrarVendedor(nome,email,cpf);
     }

@@ -33,6 +33,24 @@ public class ServicoCliente {
         }
     }
 
+    //Metodo de verificar duplicidade de e-mail
+    public static void verificarEmailRepetido (String email) throws Exception {
+        for (Cliente clienterReferencia:clientes) {
+            if(clienterReferencia.getEmail().equalsIgnoreCase(email)){
+                throw new Exception("Já existe cliente vinculado a esse e-mail em nosso Sistema! ");
+            }
+        }
+    }
+
+    //Metodo de verificar duplicidade de CPF
+    public static void VerificarCpfRepetido (String cpf) throws Exception {
+        for (Cliente clienteReferencia:clientes) {
+            if(clienteReferencia.getCpf().equalsIgnoreCase(cpf))
+                throw new Exception("Já existe cliente vinculado a esse CPF em nosso Sistema! ");
+        }
+    }
+
+
 
     //Método que mostra clientees cadastrados
     public static void exibirClientesCadastrados() {
