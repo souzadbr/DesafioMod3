@@ -68,5 +68,56 @@ public class Sistema {
         ServicoVenda.exibirVendasCadastrados();
     }
 
+    //Método executar
+
+    public static boolean execultar () throws Exception{
+
+        boolean continuarMenu = true;
+
+        do{
+            menu();
+            int opcaoUsuario = capturarDados("Digite a opção desejada: ").nextInt();
+
+            if(opcaoUsuario == 1){
+
+                Cliente cliente = cadastrarCliente();
+                System.out.println(cliente);
+                System.out.println("Cliente cadastrado com sucesso!");
+
+            }
+            else if (opcaoUsuario == 2){
+
+                Vendedor vendedor = cadastrarVendedor();
+                System.out.println(vendedor);
+                System.out.println("Vendedor cadastrado com sucesso!");
+
+            }
+            else if(opcaoUsuario == 3){
+
+                Venda venda = cadastrarVenda();
+                System.out.println("Venda cadastrada com sucesso");
+
+            }
+            else if(opcaoUsuario == 4){
+
+                Sistema.exibirVendasCadastradas();
+
+            }
+            else if (opcaoUsuario == 5){
+
+                Sistema.exibirVendedoresCadastrados();
+            }
+            else if (opcaoUsuario == 6){
+
+                Sistema.exibirClientesCadastrados();
+
+            }else {
+                continuarMenu = false;
+            }
+
+        }while(continuarMenu);
+
+        return continuarMenu;
+    }
 
 }

@@ -16,7 +16,7 @@ public class ServicoCliente {
         return cliente;
     }
 
-    //Método que encontra cliente via email
+    //Método que encontra cliente via email e validar para cadastrar venda para ele
     public static Cliente encontrarClientePeloEmail (String email)throws Exception{
         for (Cliente clienteReferencia: clientes) {
             if(clienteReferencia.getEmail().equalsIgnoreCase(email)){

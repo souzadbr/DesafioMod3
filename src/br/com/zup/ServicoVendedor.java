@@ -15,7 +15,7 @@ public class ServicoVendedor {
         return vendedor;
     }
 
-    //Método que encontra vendedor via email
+    //Método que encontra vendedor via email e valida para cadastrar venda para ele
     public static Vendedor encontrarVendedorPeloEmail (String email)throws Exception{
         for (Vendedor vendedorReferencia: vendedores) {
             if(vendedorReferencia.getEmail().equalsIgnoreCase(email)){
