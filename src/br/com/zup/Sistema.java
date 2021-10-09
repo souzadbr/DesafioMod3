@@ -17,7 +17,9 @@ public class Sistema {
         System.out.println("Digite 4 - para listar Vendas Cadastradas. ");
         System.out.println("Digite 5 - para listar Vendedores Cadastrados. ");
         System.out.println("Digite 6 - para listas Clientes Cadastrados. ");
-        System.out.println("digite 7 - para SAIR. ");
+        System.out.println("Digite 7 - para pesquisar vendas feits por um vendedor via e-mail. ");
+        System.out.println("Digite 8 - para pesquisar compras feitas por um cliente via CPF. ");
+        System.out.println("digite 9 - para SAIR. ");
     }
 
     //Método Cadastrar cliente
@@ -78,7 +80,7 @@ public class Sistema {
 
         boolean continuarMenu = true;
 
-        do{
+        while(continuarMenu = true){
             menu();
             int opcaoUsuario = capturarDados("Digite a opção desejada: ").nextInt();
 
@@ -115,11 +117,27 @@ public class Sistema {
 
                 Sistema.exibirClientesCadastrados();
 
-            }else {
+            }
+            else if (opcaoUsuario == 7){
+               String email = capturarDados("Digite o e-mail do vendedor que deseja saber sua lista de vendas realizadas: ").nextLine();
+               ServicoVenda.pesquisarVenda(email);
+            }
+            else if (opcaoUsuario == 8){
+                String cpf = capturarDados("Digite o CPF do cliente que deseja saber a lista de compras realizadas: ").nextLine();
+                ServicoVenda.pesquisarCompras(cpf);
+            }
+            else if(opcaoUsuario == 9) {
+
+                System.out.println("Até mais.Volte Sempre!");
                 continuarMenu = false;
+                System.exit(0);
+
+            }
+            else {
+                System.out.println("Digite uma das opções válidas!");
             }
 
-        }while(continuarMenu);
+        }
 
         return continuarMenu;
     }

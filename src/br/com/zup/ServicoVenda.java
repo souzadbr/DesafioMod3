@@ -15,6 +15,28 @@ public class ServicoVenda {
         return venda;
     }
 
+    //Método Pesquisar Compra do Cliente
+    public static void pesquisarCompras(String cpf){
+        List<Venda>compraCliente = new ArrayList<>();
+        for (Venda compraReferencia: vendas) {
+            if(compraReferencia.getCliente().getCpf().equals(cpf)){
+                System.out.println(compraReferencia);
+                compraCliente.add(compraReferencia);
+            }
+        }
+    }
+
+    //Método Pesquisar Venda do Venedor
+    public static void pesquisarVenda(String email){
+        List<Venda> vendaVendedor = new ArrayList<>();
+        for (Venda vendaReferencia:vendas) {
+           if(vendaReferencia.getVendedor().getEmail().equalsIgnoreCase(email)){
+               System.out.println(vendaReferencia);
+               vendaVendedor.add(vendaReferencia);
+           }
+        }
+    }
+
     //Método exibir faturas cadastradas
     public static void exibirVendasCadastrados(){
 
