@@ -15,6 +15,16 @@ public class ServicoVendedor {
         return vendedor;
     }
 
+    //Método que encontra vendedor via email
+    public static Vendedor encontrarVendedorPeloEmail (String email)throws Exception{
+        for (Vendedor vendedorReferencia: vendedores) {
+            if(vendedorReferencia.getEmail().equalsIgnoreCase(email)){
+                return vendedorReferencia;
+            }
+        }
+        throw new Exception("Não temos vendedor ligado a esse e-mail!");
+    }
+
     public static void exibirVendedoresCadastrados() {
 
         System.out.println(vendedores);

@@ -16,6 +16,16 @@ public class ServicoCliente {
         return cliente;
     }
 
+    //Método que encontra cliente via email
+    public static Cliente encontrarClientePeloEmail (String email)throws Exception{
+        for (Cliente clienteReferencia: clientes) {
+            if(clienteReferencia.getEmail().equalsIgnoreCase(email)){
+                return clienteReferencia;
+            }
+        }
+        throw new Exception("Não temos cliente ligado a esse e-mail!");
+    }
+
 
     //Método que mostra clientees cadastrados
     public static void exibirClientesCadastrados() {

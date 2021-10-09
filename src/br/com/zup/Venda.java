@@ -17,6 +17,10 @@ public class Venda {
         this.dataRegistro = dataRegistro;
     }
 
+    public Venda() {
+
+    }
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -57,8 +61,8 @@ public class Venda {
         retorno.append(cliente);
         retorno.append("\n------Dados Vendedor------");
         retorno.append(vendedor);
-        retorno.append("Valor fatura: "+valor);
-        retorno.append("Data da Venda: "+dataRegistro);
+        retorno.append("\n Valor fatura: "+valor);
+        retorno.append("\n Data da Venda: "+dataRegistro);
         return retorno.toString();
     }
 }

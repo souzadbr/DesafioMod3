@@ -38,6 +38,18 @@ public class Sistema {
         return ServicoVendedor.cadastrarVendedor(nome,email,cpf);
     }
 
+    //Método de cadastrar fatura
+    public static Venda cadastrarVenda() throws Exception {
+        String emailCliente = capturarDados("Digite e-mail do cliente que deseja ter a fatura vinculada. ").nextLine();
+        String emailVendedor = capturarDados("Digite e-mail do vendedor que fez a venda. ").nextLine();
+        double valor = capturarDados("Digite o valor da venda: ").nextDouble();
+        String dataRegistro = capturarDados("Digite a data de Venda: ").nextLine();
+
+
+        return ServicoVenda.cadastrarVenda(emailCliente, emailVendedor, valor, dataRegistro);
+
+    }
+
     //Método Exibir Cliente cadastrados
     public static void exibirClientesCadastrados() {
 
@@ -48,6 +60,12 @@ public class Sistema {
     public static void exibirVendedoresCadastrados() {
 
        ServicoVendedor.exibirVendedoresCadastrados();
+    }
+
+    //Método Exibir Vendas Cadastradas
+    public static void exibirVendasCadastradas() {
+
+        ServicoVenda.exibirVendasCadastrados();
     }
 
 
