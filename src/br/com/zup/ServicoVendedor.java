@@ -8,8 +8,8 @@ public class ServicoVendedor {
     private static List<Vendedor> vendedores = new ArrayList<>();
 
     //Método que cadastra Vendedor Responsavel
-    public static Vendedor cadastrarVendedor(String nome, String email, String cpf) {
-
+    public static Vendedor cadastrarVendedor(String nome, String email, String cpf) throws Exception {
+        validarEmail(email);
         Vendedor vendedor = new Vendedor(nome, email, cpf);
         vendedores.add(vendedor);
         return vendedor;
@@ -23,6 +23,13 @@ public class ServicoVendedor {
             }
         }
         throw new Exception("Não temos vendedor ligado a esse e-mail!");
+    }
+
+    //Validar email Vendedor verificando se contem @
+    public static void validarEmail(String email) throws Exception {
+        if (!email.contains("@")) {
+            throw new Exception("Email inválido. Verifique email digitado!");
+        }
     }
 
     public static void exibirVendedoresCadastrados() {

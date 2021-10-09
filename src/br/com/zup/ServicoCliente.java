@@ -5,11 +5,11 @@ import java.util.List;
 
 public class ServicoCliente {
 
-    private static List<Cliente>clientes = new ArrayList<>();
+    private static List<Cliente> clientes = new ArrayList<>();
 
     //Método Cadastrar cliente
     public static Cliente cadastrarCliente(String nome, String email, String cpf) throws Exception {
-
+        validarEmail(email);
         Cliente cliente = new Cliente(nome, email, cpf);
 
         clientes.add(cliente);
@@ -17,13 +17,20 @@ public class ServicoCliente {
     }
 
     //Método que encontra cliente via email e validar para cadastrar venda para ele
-    public static Cliente encontrarClientePeloEmail (String email)throws Exception{
-        for (Cliente clienteReferencia: clientes) {
-            if(clienteReferencia.getEmail().equalsIgnoreCase(email)){
+    public static Cliente encontrarClientePeloEmail(String email) throws Exception {
+        for (Cliente clienteReferencia : clientes) {
+            if (clienteReferencia.getEmail().equalsIgnoreCase(email)) {
                 return clienteReferencia;
             }
         }
         throw new Exception("Não temos cliente ligado a esse e-mail!");
+    }
+
+    //Validar email Cliente verificando se contem @
+    public static void validarEmail(String email) throws Exception {
+        if (!email.contains("@")) {
+            throw new Exception("Email inválido. Verifique email digitado!");
+        }
     }
 
 
